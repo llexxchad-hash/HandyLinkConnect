@@ -11,16 +11,57 @@
       html,
       body {
         height: 100%;
+        margin: 0;
+        padding: 0;
       }
       /* These styles disable body scrolling if you are using <ScrollView> */
       body {
         overflow: hidden;
+        background-color: #000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
       }
       /* These styles make the root element full-height */
       #root {
         display: flex;
         height: 100%;
+        width: 100%;
         flex: 1;
+      }
+      
+      /* Responsive scaling for web - mobile first */
+      @media (min-width: 480px) {
+        body {
+          background: linear-gradient(135deg, #0a0e27 0%, #1a2a4e 100%);
+        }
+        #root {
+          max-width: 480px;
+          height: 85vh;
+          max-height: 100vh;
+          margin: auto;
+          border-radius: 12px;
+          box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+          overflow: hidden;
+        }
+      }
+      
+      /* Desktop view - scale up nicely */
+      @media (min-width: 768px) {
+        #root {
+          max-width: 540px;
+          height: 90vh;
+          border-radius: 20px;
+          box-shadow: 0 25px 80px rgba(0, 0, 0, 0.4);
+        }
+      }
+      
+      /* Extra large screens */
+      @media (min-width: 1024px) {
+        #root {
+          max-width: 600px;
+          height: 95vh;
+        }
       }
     </style>
   <link rel="icon" href="/favicon.ico" /></head>
