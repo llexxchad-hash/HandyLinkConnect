@@ -4,9 +4,88 @@
     <meta charset="utf-8" />
     <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="theme-color" content="#1B4B7F" />
+    <meta name="description" content="HandyLink - Find trusted local service professionals" />
     <title>HandyLink</title>
-    <!-- The `react-native-web` recommended style reset: https://necolas.github.io/react-native-web/docs/setup/#root-element -->
+
+    <!-- Icon fonts — MUST use the exact internal family names from @expo/vector-icons -->
+    <style id="expo-vector-icons">
+      @font-face { font-family: 'ionicons'; src: url('assets/node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.b4eb097d35f44ed943676fd56f6bdc51.ttf') format('truetype'); font-display: block; }
+      @font-face { font-family: 'material'; src: url('assets/node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/MaterialIcons.4e85bc9ebe07e0340c9c4fc2f6c38908.ttf') format('truetype'); font-display: block; }
+      @font-face { font-family: 'feather'; src: url('assets/node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Feather.ca4b48e04dc1ce10bfbddb262c8b835f.ttf') format('truetype'); font-display: block; }
+      @font-face { font-family: 'FontAwesome'; src: url('assets/node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/FontAwesome.b06871f281fee6b241d60582ae9369b9.ttf') format('truetype'); font-display: block; }
+      @font-face { font-family: 'material-community'; src: url('assets/node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/MaterialCommunityIcons.6e435534bd35da5fef04168860a9b8fa.ttf') format('truetype'); font-display: block; }
+      @font-face { font-family: 'anticon'; src: url('assets/node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/AntDesign.3f78af31cca60105799838a1a7a59fbd.ttf') format('truetype'); font-display: block; }
+      @font-face { font-family: 'entypo'; src: url('assets/node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Entypo.31b5ffea3daddc69dd01a1f3d6cf63c5.ttf') format('truetype'); font-display: block; }
+    </style>
+
+    <!-- Layout reset + responsive design -->
     <style id="expo-reset">
+      *, *::before, *::after { box-sizing: border-box; }
+      html, body { height: 100%; margin: 0; padding: 0; -webkit-font-smoothing: antialiased; }
+      body { overflow: hidden; background-color: #0d1b35; }
+      #root { display: flex; height: 100%; width: 100%; flex: 1; overflow: hidden; }
+
+      @media (min-width: 540px) {
+        body {
+          background: linear-gradient(160deg, #0a0f24 0%, #0d2b55 50%, #0a0f24 100%);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+        #root {
+          width: 100%;
+          max-width: 480px;
+          height: 92vh;
+          max-height: 900px;
+          border-radius: 24px;
+          box-shadow: 0 30px 90px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.05);
+          overflow: hidden;
+        }
+      }
+
+      @media (min-width: 1024px) {
+        #root {
+          max-width: 430px;
+          height: 93vh;
+          max-height: 932px;
+          border-radius: 40px;
+          box-shadow: 0 40px 120px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,255,255,0.08);
+        }
+        body::before {
+          content: '';
+          position: fixed;
+          top: -30%; left: -20%;
+          width: 60%; height: 60%;
+          background: radial-gradient(circle, rgba(27,75,127,0.15) 0%, transparent 70%);
+          pointer-events: none;
+        }
+        body::after {
+          content: '';
+          position: fixed;
+          bottom: -30%; right: -20%;
+          width: 60%; height: 60%;
+          background: radial-gradient(circle, rgba(74,144,226,0.1) 0%, transparent 70%);
+          pointer-events: none;
+        }
+      }
+
+      ::-webkit-scrollbar { width: 4px; height: 4px; }
+      ::-webkit-scrollbar-track { background: transparent; }
+      ::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.2); border-radius: 4px; }
+      button, [role="button"] { -webkit-user-select: none; user-select: none; }
+    </style>
+
+    <link rel="icon" href="favicon.ico" />
+  </head>
+
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+    <script src="_expo/static/js/web/AppEntry-abda01431534ae9d1544a40624865cb8.js" defer></script>
+  </body>
+</html>
+
       /* These styles make the body full-height */
       html,
       body {
