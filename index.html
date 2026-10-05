@@ -74,6 +74,10 @@
       ::-webkit-scrollbar-track { background: transparent; }
       ::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.2); border-radius: 4px; }
       button, [role="button"] { -webkit-user-select: none; user-select: none; }
+
+      /* Inputs have an intrinsic min-width in browsers, which makes flex rows overflow on narrow screens */
+      input, textarea { min-width: 0; max-width: 100%; }
+      input:focus, textarea:focus { outline: none; }
     </style>
 
     <link rel="icon" href="favicon.ico" />
@@ -82,6 +86,6 @@
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
-    <script src="_expo/static/js/web/AppEntry-45b80047d4bf075bc2e3644941da3c02.js" defer></script>
+    <script src="_expo/static/js/web/AppEntry-3d10fc6cb1f209c9c1ed44b6c41e4926.js" defer></script>
   </body>
 </html>
