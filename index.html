@@ -8,6 +8,10 @@
     <meta name="description" content="HandyLink - Find trusted local service professionals" />
     <title>HandyLink</title>
 
+    <link rel="preconnect" href="https://ytyrjpzmnsbbibzyuynx.supabase.co" crossorigin />
+    <link rel="preload" as="font" type="font/ttf" crossorigin href="assets/node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.b4eb097d35f44ed943676fd56f6bdc51.ttf" />
+    <script src="_expo/static/js/web/AppEntry-6b74a0d9d0bf0a5fbb1917ae4c1f97ad.js" defer></script>
+
     <!-- Icon fonts â€” MUST use the exact internal family names from @expo/vector-icons -->
     <style id="expo-vector-icons">
       @font-face { font-family: 'ionicons'; src: url('assets/node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.b4eb097d35f44ed943676fd56f6bdc51.ttf') format('truetype'); font-display: block; }
@@ -78,6 +82,11 @@
       /* Inputs have an intrinsic min-width in browsers, which makes flex rows overflow on narrow screens */
       input, textarea { min-width: 0; max-width: 100%; }
       input:focus, textarea:focus { outline: none; }
+
+      /* Shown instantly while the JS bundle downloads; React replaces it on first render */
+      .boot { flex: 1; display: flex; align-items: center; justify-content: center; background: #1B4B7F; }
+      .boot-spinner { width: 36px; height: 36px; border: 3px solid rgba(255,255,255,0.3); border-top-color: #fff; border-radius: 50%; animation: boot-spin 0.8s linear infinite; }
+      @keyframes boot-spin { to { transform: rotate(360deg); } }
     </style>
 
     <link rel="icon" href="favicon.ico" />
@@ -85,7 +94,6 @@
 
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <script src="_expo/static/js/web/AppEntry-3d10fc6cb1f209c9c1ed44b6c41e4926.js" defer></script>
+    <div id="root"><div class="boot"><div class="boot-spinner"></div></div></div>
   </body>
 </html>
